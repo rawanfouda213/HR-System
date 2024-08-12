@@ -1,0 +1,90 @@
+<body>
+  <div class="container mt-5">
+    <div class="page-title">
+      <h1 class="fs-3 fw-bold">الإعدادات العامة</h1>
+      <hr />
+    </div>
+    <form action="#">
+      <p>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="method">
+          <mat-button-toggle value="hour">الساعة</mat-button-toggle>
+          <mat-button-toggle value="pound">الجنية</mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+
+      <div class="input-field" style="flex-direction: row">
+        <div class="row" style="margin-right: 110px">
+          <div class="col s6">
+            <label style="margin-top: 25px">الإضافة</label>
+          </div>
+          <div class="col s6">
+            <input
+              type="number"
+              [placeholder]="method === 'hour' ? 'الإضافة بالساعة' : 'الإضافة بالجنيه'"
+              [(ngModel)]="extraHourRate"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+
+        <div class="row" style="margin-right: 160px">
+          <div class="col s6">
+            <label style="margin-top: 25px">الخصم</label>
+          </div>
+          <div class="col s6">
+            <input
+              type="number"
+              [placeholder]="method === 'hour' ? 'الخصم بالساعة' : 'الخصم بالجنيه'"
+              [(ngModel)]="discountHourRate"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+      </div>
+
+      <span class="title mt-5">الاجازات الاسبوعيه </span>
+      <div class="workfields">
+        <div class="input-field">
+          <label style="margin-bottom: 15px">يوم الاجازه الرسمي الاول</label>
+          <select
+            name="selectedFirstWeekendDay"
+            id="dropdowninput"
+            [(ngModel)]="selectedFirstWeekendDay"
+          >
+            <option disabled selected hidden value="اختر">اختر</option>
+            <option value="Sunday">الأحد</option>
+            <option value="Monday">الاثنين</option>
+            <option value="Tuesday">الثلاثاء</option>
+            <option value="Wednesday">الأربعاء</option>
+            <option value="Thursday">الخميس</option>
+            <option value="Friday">الجمعة</option>
+            <option value="Saturday">السبت</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label style="margin-bottom: 15px">يوم الاجازه الرسمي الثاني</label>
+          <select
+            name="selectedSecondWeekendDay"
+            id="dropdowninput"
+            [(ngModel)]="selectedSecondWeekendDay"
+          >
+            <option disabled selected hidden>اختر</option>
+            <option value="Sunday">الأحد</option>
+            <option value="Monday">الاثنين</option>
+            <option value="Tuesday">الثلاثاء</option>
+            <option value="Wednesday">الأربعاء</option>
+            <option value="Thursday">الخميس</option>
+            <option value="Friday">الجمعة</option>
+            <option value="Saturday">السبت</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <div dir="ltr" class="buttons">
+      <button class="btn" (click)="Save()">
+        <span class="btnText">حفظ</span>
+        <i class="btnText bx bx-save"></i>
+      </button>
+    </div>
+  </div>
+</body>

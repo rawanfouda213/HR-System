@@ -1,0 +1,89 @@
+<div class="body">
+    <div class="container">
+        <div class="page-title">
+            <h1 class="fs-3 fw-bold">تعديل موظف</h1>
+            <hr>
+          </div>
+      <form [formGroup]="editForm" (ngSubmit)="save()">
+          <div class="form first">
+              <div class="details personal">
+                  <span class="title">البيانات الشخصية</span>
+                  <div class="fields">
+                      <div class="input-field">
+                          <label>اسم الموظف</label>
+                          <input type="text" formControlName="name" placeholder="اسم الموظف">
+                      </div>
+                      <div class="input-field">
+                          <label>العنوان</label>
+                          <input type="text" formControlName="address" placeholder="العنوان">
+                      </div>
+                      <div class="input-field">
+                          <label>رقم التليفون</label>
+                          <input type="text" formControlName="phone" placeholder="رقم التليفون">
+                      </div>
+                      <div class="input-field">
+                          <label style="margin-bottom: 15px;">النوع</label>
+                          <select formControlName="gender" id="gender">
+                              <option disabled selected hidden>اختر</option>
+                              <option value="Male" [selected]="isMaleSelected()">ذكر</option>
+                              <option value="Female" [selected]="isFemaleSelected()">أنثى</option>
+                          </select>
+                      </div>
+                      <div class="input-field">
+                          <label>الجنسية</label>
+                          <input type="text" formControlName="nationality" placeholder="الجنسية">
+                      </div>
+                      <div class="input-field">
+                          <label>تاريخ الميلاد</label>
+                          <input type="date" formControlName="birthDate" placeholder="تاريخ الميلاد">
+                      </div>
+                      <div class="input-field">
+                          <label>الرقم القومي</label>
+                          <input type="text" formControlName="nationalId" placeholder="الرقم القومي">
+                      </div>
+                  </div>
+              </div>
+              <div class="details work">
+                  <span class="title">بيانات العمل</span>
+                  <div class="workfields">
+                      <div class="input-field">
+                          <label>تاريخ التعاقد</label>
+                          <input type="date" formControlName="contractdate" placeholder="تاريخ التعاقد">
+                      </div>
+                      <div class="input-field">
+                          <label>الراتب</label>
+                          <input type="number" formControlName="netSalary" placeholder="الراتب">
+                      </div>
+                      <div class="input-field">
+                        <label style="padding-bottom: 20px;">القسم</label>
+                        <select style="margin-bottom: 10px;" formControlName="department" id="gender">
+                            <option disabled selected hidden>اختر</option>
+                            <option *ngFor="let department of departments" [value]="department.departmentName">{{ department.departmentName }}</option>
+                          </select>
+                    </div>
+                  </div>
+                  <div class="workfields">
+                      <div class="input-field">
+                          <label>موعد الحضور</label>
+                          <input type="time" formControlName="attendanceTime">
+                      </div>
+                      <div class="input-field" style="margin-left: 285px;">
+                          <label>موعد الانصراف</label>
+                          <input type="time" formControlName="leaveTime">
+                      </div>
+                  </div>
+              </div>
+              <div dir="ltr" class="buttons">
+                <button class="btn" mat-raised-button type="submit">
+                    <span>حفظ</span>
+                    <i class=" bx bx-save"></i>
+                </button>
+                <button (click)="closePage()" mat-raised-button class="closebtn">
+                    <span>إلغاء</span>
+                    <i class=" bx bx-x"></i>
+                </button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+    <div class="container">
+      <form [formGroup]="EmployeeSettingsForm" (ngSubmit)="Saveuser()">
+        <h1 mat-dialog-title dir="rtl"  class="title">{{inputdata.title}}</h1>
+        <div class="form first" dir="rtl">
+          <div class="details personal">
+              <div class="fields">
+                  <div class="input-field">
+                      <label>إضافة علي الراتب</label>
+                      <input type="text" formControlName="ExtraSalary" placeholder="إضافة">
+                  </div>
+                  <div class="input-field">
+                    <label>خصم من الراتب</label>
+                    <input type="text" formControlName="SalaryLoss" placeholder="خصم">
+                </div>
+                  
+              </div>
+          </div>
+      </div>
+        <div dir="ltr" class="buttons">
+          <button class="btn" mat-raised-button type="submit">
+              <span>حفظ</span>
+              <i class=" bx bx-save"></i>
+          </button>
+          <a (click)="closepopup()" mat-raised-button class="closebtn">
+              <span>إلغاء</span>
+              <i class=" bx bx-x"></i>
+          </a>
+      </div>
+        </form>
+    </div>

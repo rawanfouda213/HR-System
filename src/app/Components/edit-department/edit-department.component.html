@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 mat-dialog-title dir="rtl"  class="title">{{data.title}}</h1>
+    <form [formGroup]="deptForm" (ngSubmit)="save()">
+        <div class="fields" dir="rtl">
+          <div class="input-field">
+            <label>اسم القسم
+            </label>
+            <input type="text" formControlName="departmentName" placeholder=" اسم القسم" required>
+            <mat-error>{{ duplicatedNameErrorMessage }}</mat-error> 
+
+          </div>
+        </div>
+        </form>
+
+<div dir="ltr" class="buttons">
+    <button class="btn" mat-raised-button (click)="save()">
+        <span>حفظ</span>
+    </button>
+    <button mat-raised-button class="closebtn" (click)="cancel()">
+        <span>إلغاء</span>
+    </button>
+</div>
+</div>

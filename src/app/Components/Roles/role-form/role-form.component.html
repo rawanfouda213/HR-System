@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="card border-0">
+        <div class="card-title">
+            <!-- <div class="row">
+                <div class="">
+                    <h1 class="blueColor fs-3 fw-bold ">
+                        إضافة مجموعة جديدة </h1>
+                </div>
+            </div> -->
+            <div class="page-title">
+                <h1 class="fs-3 fw-bold">إضافة مجموعة جديدة</h1>
+                <hr>
+              </div>
+        </div>
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="text-end">
+                        <label class="groupName fw-bold fs-5 mb-2" for="RoleName">اسم المجموعة</label>
+                        <input [(ngModel)]="RolesList.role_Name" placeholder="ادخل اسم المجموعة" type="text" class="form-control"
+                            name="RoleName" id="RoleName">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الصفحات</th>
+                                    <th>إضافة</th>
+                                    <th>حذف</th>
+                                    <th>تعديل</th>
+                                    <th>عرض</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="fw-bold" *ngFor="let role of RolesList.rolePermissionsDTOs; let i = index">
+                                    <td class="text-center">
+                                        <input type="checkbox" class="form-check-input" (change)="checkAll($event, i)">
+                                    </td>
+                                    <td class="blackColor">
+                                        {{role.page_Name}}
+                                    </td>
+                                    <td class="text-center fw-bold blueColor">
+                                        <input type="checkbox" class="form-check-input fs-5" [(ngModel)]="role.isAdd">
+                                    </td>
+                                    <td class="text-center fw-bold blueColor">
+                                        <input type="checkbox" class="form-check-input fs-5" [(ngModel)]="role.isDelete">
+                                    </td>
+                                    <td class="text-center fw-bold blueColor">
+                                        <input type="checkbox" class="form-check-input fs-5" [(ngModel)]="role.isEdit">
+                                    </td>
+                                    <td class="text-center fw-bold blueColor">
+                                        <input type="checkbox" class="form-check-input fs-5" [(ngModel)]="role.isView">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-11 text-start">
+                    <button dir="rtl" class="searchBtn bgSave" (click)="saveRole()"><mat-icon class="ic">save</mat-icon>حفظ</button>
+                    <!-- <button dir="rtl" class="searchBtn bgSave" mat-raised-button (click)="saveRole()"><mat-icon class="ic">save</mat-icon>حفظ</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

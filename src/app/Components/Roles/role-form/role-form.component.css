@@ -1,0 +1,88 @@
+.page-title {
+   text-align: right;
+   margin-bottom: 10px; 
+   color: #015e87;
+   font-weight: bold;
+   padding: 20px;
+ }
+
+.blueColor {
+   color: #015e87;
+}
+
+.groupName {
+  color: #015e87;
+}
+
+.blackColor {
+   color: #000;
+}
+
+.orangColor {
+   color: #f5835f;
+}
+
+.greyColor {
+    color: #c5c4c4;
+}
+
+.bgBlue,
+.bgSave {
+   background-color: #015e87;
+   color: #fff;
+}
+
+.bgSave:hover {
+    background-color: #00364d;
+    box-shadow: 0px 0px 5px 2px #00415d7f;
+}
+
+.bgOrange {
+   background-color: #f5835f;
+   color: #fff;
+}
+
+.bgOrange:hover {
+   background-color: #e3592f;
+   box-shadow: 0px 0px 5px 2px #e3592f89;
+}
+
+.bgGrey {
+   background-color: #c5c4c4;
+}
+
+.bgGrey:hover {
+   background-color: #7d7d7d;
+   box-shadow: 0px 0px 5px 2px #7d7d7d8d;
+}
+
+.container-fluid {
+   direction: rtl;
+}
+
+.searchBtn {
+  background-color: #015e87;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-style: none;
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.ic {
+  position: relative;
+  left: 10px;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+th {
+   background-color: #f0f0f0 !important;
+   color: black;
+   font-weight: bold;
+   text-align: center !important;
+}

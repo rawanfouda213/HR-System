@@ -1,0 +1,38 @@
+<div mat-dialog-content dir="rtl">
+  <div class="page-title">
+    <h1 class="fs-3 fw-bold">تعديل الحضور و الانصراف</h1>
+    <hr>
+  </div>
+  <form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+    <!-- <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Attendance Date</mat-label>
+        <input matInput type="date" formControlName="attendanceDate">
+      </mat-form-field>
+    </div> -->
+    <div class="mb-3">
+      <!-- <mat-form-field appearance="fill"> -->
+      <mat-label>وقت الحضور</mat-label>
+      <input matInput type="datetime-local" formControlName="attendanceTime" class="form-control">
+      <!-- </mat-form-field> -->
+    </div>
+    <div class="mb-3">
+      <!-- <mat-form-field appearance="fill"> -->
+      <mat-label>وقت الانصراف</mat-label>
+      <input matInput type="datetime-local" formControlName="departureTime" class="form-control">
+      <!-- </mat-form-field> -->
+    </div>
+    <input type="hidden" formControlName="id">
+    <div class="button-container">
+      <button type="button" class="btnClose bgSave"(click)="OnClose()">الغاء</button>
+      <button (click)="onSubmit()" class="bgSave" type="button" >تعديل</button>
+    </div>
+
+    <!-- <div class="button-container">
+      <button class="btnClose bgSave" (click)="OnClose()">إلغاء</button> 
+        <button type="submit" (click)="onSubmit" class="bgSave ">إضافة</button>
+    </div> -->
+  </form>
+
+
+</div>

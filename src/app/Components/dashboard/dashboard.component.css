@@ -1,0 +1,59 @@
+.p-3 .bg-white .shadow-sm .d-flex .justify-content-around .align-items-center .rounded {
+    box-shadow: 0 5px 10px #c5c4c4;
+  }
+  
+  p, h3 {
+    color: #015e87;
+  }
+  
+  .rounded-full {
+    border-radius: 100%;
+    background-color: #eeeeee;
+  }
+  
+  i {
+    color: #f5835f;
+    font-size: 30px;
+  }
+  
+  .page-title {
+    text-align: left;
+    color: #015e87;
+    font-weight: bold;
+    padding: 20px;
+  }
+  
+  .chart {
+    height: 37vh;
+    display: flex;
+
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+  }
+  
+  .attendance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .attendance-container {
+    text-align: center;
+    height: 50vh;
+    width: 50vw;
+  }
+  
+  @media (min-width: 768px) {
+    .chart-container {
+      width: 70vw;
+    }
+  
+    .attendance-container {
+      width: 70vw;
+    }
+  }

@@ -1,0 +1,93 @@
+.page-title {
+    text-align: right;
+    margin-bottom: 10px; 
+    color: #015e87;
+    font-weight: bold;
+    padding: 20px;
+  }
+
+
+  .MainTable {
+    width: 100%;
+  }
+
+  .printAll {
+    margin-right: auto;
+    margin-left: 50px;
+  }
+
+  .mat-column-id,
+  .mat-column-name,
+  .mat-column-department,
+  .mat-column-attend,
+  .mat-column-leave,
+  .mat-column-date,
+  .mat-column-OriginalAttend,
+  .mat-column-OriginalLeave,
+  .mat-column-ExtraHours,
+  .mat-column-EarlyDepartureHours {
+    border-left: 1px solid #d6d6d6;
+  }
+
+  td.mat-cell, th.mat-header-cell {
+    text-align: center;
+    justify-content:center;
+}
+
+  td{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+th{
+    background-color: #f0f0f0 !important;
+    color: black;
+    font-weight: bold;
+    text-align: center !important;
+}
+
+
+.closeBtn{
+    background-color: #015e87;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.mat-dialog-title {
+    text-align: center;
+    color: #015e87; /* Adjust color as needed */
+    font-weight: bold;
+  }
+  
+  .mat-dialog-content {
+    direction: rtl;
+  }
+  
+  .mat-elevation-z8 {
+    margin-top: 20px; /* Adjust margin as needed */
+    width: 100%;
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .mat-dialog-actions button {
+    background-color: #015e87; /* Adjust background color as needed */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .mat-dialog-actions button:hover {
+    background-color: #01436a; /* Adjust hover background color as needed */
+  }
+  

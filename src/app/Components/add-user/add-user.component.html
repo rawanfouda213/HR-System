@@ -1,0 +1,141 @@
+<!-- <div class="body">
+  <div class="container">
+    <div class="page-title">
+        <h1 class="fs-3 fw-bold">إضافة مستخدم</h1>
+        <hr>
+      </div>
+    <form [formGroup]="userForm">
+        <div class="form first">
+            <div class="details personal">
+                <div class="fields">
+                    <div class="input-field">
+                        <label>الاسم بالكامل</label>
+                        <input type="text" formControlName="fullName" placeholder="الاسم بالكامل">
+                    </div>
+                    <div class="input-field">
+                        <label>اسم المستخدم</label>
+                        <input type="text" formControlName="username" placeholder="اسم المستخدم">
+                    </div>
+                    <div class="input-field">
+                      <label style="margin-bottom: 15px;">الصلاحيات</label>
+                      <select formControlName="permissions" id="permissions">
+                          <option disabled selected hidden>اختر</option> -->
+<!-- <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option> -->
+<!-- </select>
+                  </div>
+                  <div *ngIf="isButtonClicked">
+                  <div  *ngIf="userForm.get('permissions')?.hasError('permissionsRequired')" class="text-danger">
+                    من فضلك قم بتحديد صالحيات المجموعة قبل الحفظ.
+                </div>
+                </div>
+                  
+                    <div class="input-field">
+                        <label>البريد الالكتروني</label>
+                        <input type="email" formControlName="email" placeholder="البريد الالكتروني">
+                    </div>
+                    <div *ngIf="isButtonClicked">
+                    <div *ngIf="userForm.get('email')?.hasError('invalidEmail')" class="text-danger text-dangerEmail">
+                      البريد الإلكتروني غير صالح. يجب أن يكون أكثر من أو يساوي 3 أحرف ويحتوي على ما لا يقل عن 2 أرقام وينتهي بـ '&#64;gmail.com'.
+                  </div>
+                </div>
+                    
+                    <div class="input-field">
+                        <label>الباسورد</label>
+                        <input type="password" formControlName="password" placeholder="الباسورد">
+                    </div>
+                    <div *ngIf="isButtonClicked">
+                    <div *ngIf="userForm.get('password')?.hasError('invalidPassword')" class="text-danger text-dangerPassword">
+                      كلمة السر يجب ان تحتوى على ارقام وحروف و رموز.
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <div dir="ltr" class="buttons">
+                <button class="btn">
+                    <span class="btnText">حفظ</span>
+                    <i class="btnText bx bx-save"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div> -->
+
+
+<div class="body">
+  <div class="container">
+    <div class="page-title">
+      <h1 class="fs-3 fw-bold">إضافة مستخدم</h1>
+      <hr>
+    </div>
+    <form [formGroup]="userForm">
+      <div class="form first">
+        <div class="details personal">
+          <div class="fields">
+            <div class="input-field">
+              <label>الاسم بالكامل</label>
+              <input type="text" formControlName="Name" placeholder="الاسم بالكامل">
+            </div>
+            <div class="input-field">
+              <label>اسم المستخدم</label>
+              <input type="text" formControlName="User_Name" placeholder="اسم المستخدم">
+            </div>
+            <div class="input-field">
+              <label style="margin-bottom: 15px;">الصلاحيات</label>
+              <select formControlName="Role_Id" id="permissions" style="padding: 12px !important;">
+                <option disabled selected hidden>اختر</option>
+                <option *ngFor="let role of availableRoles" [value]="role.id">{{ role.name }}</option>
+              </select>
+            </div>
+            <!-- <div *ngIf="isButtonClicked">
+                    <div  *ngIf="userForm.get('permissions')?.hasError('permissionsRequired')" class="text-danger">
+                      من فضلك قم بتحديد صالحيات المجموعة قبل الحفظ.
+                  </div>
+                  </div> -->
+
+            <!-- <div *ngIf="isButtonClicked && userForm.get('Role_Id')?.hasError('required')" class="text-danger">
+                    يجب اختيار صلاحيات المستخدم.
+                  </div> -->
+
+            <div class="input-field">
+              <label>البريد الالكتروني</label>
+              <input type="email" formControlName="Email" placeholder="abc12@gmail.com">
+            </div>
+            <!-- <div *ngIf="isButtonClicked">
+                      <div *ngIf="userForm.get('email')?.hasError('invalidEmail')" class="text-danger text-dangerEmail">
+                        البريد الإلكتروني غير صالح. يجب أن يكون أكثر من أو يساوي 3 أحرف ويحتوي على ما لا يقل عن 2 أرقام وينتهي بـ '&#64;gmail.com'.
+                    </div>
+                  </div> -->
+
+            <!-- <div *ngIf="isButtonClicked && userForm.get('Email')?.hasError('email')" class="text-danger text-dangerEmail">
+                    البريد الإلكتروني غير صالح.
+                  </div> -->
+
+            <div class="input-field">
+              <label>الباسورد</label>
+              <input type="password" formControlName="Password" placeholder="الباسورد">
+            </div>
+            <!-- <div *ngIf="isButtonClicked">
+                      <div *ngIf="userForm.get('password')?.hasError('invalidPassword')" class="text-danger text-dangerPassword">
+                        كلمة السر يجب ان تحتوى على ارقام وحروف و رموز.
+                      </div>
+                  </div> -->
+
+            <!-- <div *ngIf="isButtonClicked && userForm.get('Password')?.hasError('required')" class="text-danger text-dangerPassword">
+                    كلمة المرور مطلوبة.
+                  </div> -->
+
+          </div>
+        </div>
+
+        <div dir="ltr" class="buttons">
+          <button class="btn" (click)="onSaveButtonClick()">
+            <span class="btnText">حفظ</span>
+            <i class="btnText bx bx-save"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

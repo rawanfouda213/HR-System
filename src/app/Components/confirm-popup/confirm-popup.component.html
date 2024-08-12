@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 mat-dialog-title dir="rtl"  class="title">{{ data.title }}</h1>
+<p dir="rtl" class="msg">{{ data.message }}</p>
+
+<div dir="ltr" class="buttons">
+    <button class="btn" mat-raised-button [mat-dialog-close]="true">
+        <span>نعم</span>
+    </button>
+    <button mat-raised-button class="closebtn" [mat-dialog-close]="false">
+        <span>إلغاء</span>
+    </button>
+</div>
+</div>

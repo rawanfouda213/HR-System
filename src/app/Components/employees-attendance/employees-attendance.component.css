@@ -1,0 +1,121 @@
+  mat-card {
+    margin: 1%;
+  }
+  .page-title {
+    text-align: right;
+    margin-bottom: 3px;
+    color: #015e87;
+    font-weight: bold;
+    padding: 15px;
+  }
+  
+  button {
+    margin: 2px;
+  }
+  
+  .addBtn {
+    background-color: #015e87;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 1300px;
+    margin-bottom: 15px;
+  }
+  
+  .mat-mdc-raised-button:not(:disabled) {
+    color: white;
+    background-color: #015e87;
+  }
+  
+  ::ng-deep .mat-sort-header-arrow[style] {
+    .mat-sort-header-indicator {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  
+  th {
+    background-color: #f0f0f0 !important;
+    color: black;
+    font-weight: bold;
+  
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+  
+  [dir="rtl"] .mdc-data-table__cell,
+  .mdc-data-table__cell[dir="rtl"] {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .mdc-data-table__header-cell,
+  .mdc-data-table__header-cell[dir="rtl"] {
+    text-align: center;
+  }
+  
+  /* .mat-mdc-header-row {
+    text-align: center;
+  } */
+  
+  :host ::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 28px;
+  }
+  
+  .icon {
+    color: #015e87;
+    background-color: transparent;
+  }
+  
+  td.mat-cell,
+  th.mat-header-cell {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  /* td{
+    text-align: center !important;
+    vertical-align: middle !important;
+  } */
+  
+  .mat-column-id,
+  .mat-column-name,
+  .mat-column-department,
+  .mat-column-attend,
+  .mat-column-leave,
+  .mat-column-day{
+    border-left: 1px solid #d6d6d6;
+    /* padding-left: 3px; */
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 200px;
+  }
+
+  .mat-column-action {
+    border-left: 1px solid #d6d6d6;
+    padding-left: 1px;
+    text-align: center;
+  }
+
+  .excelBtn{
+    margin-right: 10px;
+    background-color: #015e87;
+    color: white;
+ }
+
+ .btn{
+    background-color: #015e87;
+    color: white;
+    font-weight: bold;
+ }
+ 
+
+ .button-container {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .btnIconPdf{
+    color: rgb(196, 5, 5);
+  }

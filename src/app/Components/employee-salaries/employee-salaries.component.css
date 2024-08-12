@@ -1,0 +1,171 @@
+mat-card{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+/* .MainTable {
+  width: 100%;
+} */
+
+.mat-paginator {
+  margin-top: 10px;
+}
+
+.printAll {
+  margin-right: auto;
+  margin-left: 50px;
+  background-color: white;
+  border-style: none;
+}
+
+.printIcon{
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.printIcon:hover{
+  color: #015e87;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  text-align: right;
+  margin-bottom: 10px; 
+  color: #015e87;
+  font-weight: bold;
+  padding: 20px;
+}
+
+button{
+    margin: 2px;
+}
+
+.searchBtn{
+    background-color: #015e87;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+::ng-deep .mat-sort-header-arrow[style] {
+
+    .mat-sort-header-indicator {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+    }
+}
+
+th{
+    background-color: #f0f0f0 !important;
+    color: black;
+    font-weight: bold;
+    text-align: center !important;
+}
+
+
+:host ::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 28px;
+}
+
+.icon{
+    color: #015e87;
+}
+
+
+  /* td.mat-cell, th.mat-header-cell {
+    text-align: center;
+    justify-content:center;
+} */
+
+  td{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+  .mat-column-name,
+  .mat-column-department,
+  .mat-column-BasicSalary,
+  .mat-column-DaysOfAttendance,
+  .mat-column-DaysOfAbsence,
+  .mat-column-AdditionalHours,
+  .mat-column-DiscountHours,
+  .mat-column-AdditionalTotal,
+  .mat-column-TotalDiscount,
+  .mat-column-NetSalary {
+    border-left: 1px solid #d6d6d6;
+  }
+
+    .editIcon{
+      color: #015e87;
+      border-style: none;
+      background-color: white;
+    }
+
+    .printBtn{
+      border-style: none;
+      background-color: white;
+    }
+
+    .keyIcon, .printIcn{
+      font-size: 20px;
+    }
+
+    .keyIcon:hover{
+      color: black;
+    }
+
+    .printIcn{
+      padding-top: 2px;
+    }
+
+    .mat-cell .button-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .mat-cell button {
+      margin: 0 4px;
+    }
+
+    @media (max-width: 768px) {
+      .page-title h1 {
+        font-size: 1.5rem;
+      }
+    
+      .searchBtn {
+        font-size: 16px;
+      }
+    
+      .mat-form-field {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+    
+      .page-title h1 {
+        font-size: 1.2rem;
+      }
+    
+      .searchBtn {
+        font-size: 14px;
+      }
+    
+    }

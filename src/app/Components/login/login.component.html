@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="/assets/logo.png" alt="Logo" class="img-fluid">
+              <img src="/assets/logoLogin.png" alt="Logo" class="img-fluid mt-4">
+            </div>
+            <div class="col-md-6">
+              
+              <div class="col-md-10 header-container">
+                <h2 class="mb-4 fw-bold">مرحبا بك</h2>
+              </div>
+
+              <form  action="" [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
+
+                <mat-form-field style="direction: rtl;" class="customInput">
+                  <mat-label class="input">البريد الالكتروني</mat-label>
+                  <mat-icon class="icon" matPrefix>email</mat-icon>
+                  <input matInput placeholder="example@example.com" formControlName="email" autocomplete="email">
+                  <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+                  <button style="visibility: hidden;" class="eyeIcon" mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  </button>
+                </mat-form-field>
+
+                  <mat-form-field style="direction: rtl;" class="customInput">
+                    <mat-label class="input">أدخل كلمة السر</mat-label>
+                    <mat-icon class="icon" matPrefix>lock</mat-icon>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button class="eyeIcon" mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <br/>
+
+                  <div class="col-md-10 btn-container">
+                    <button type="submit" class="btn mt-3">تسجيل الدخول</button>
+                </div>
+
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

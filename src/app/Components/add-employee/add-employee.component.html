@@ -1,0 +1,241 @@
+<div class="body">
+  <div class="container">
+    <div class="page-title">
+      <h1 class="fs-3 fw-bold">إضافة موظف</h1>
+      <hr />
+    </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="save()">
+      <div class="form first">
+        <div class="details personal">
+          <span class="title">البيانات الشخصية</span>
+          <div class="fields">
+            <div class="input-field">
+              <label
+                >اسم الموظف
+                <span class="required-indicator">*</span>
+              </label>
+              <input
+                type="text"
+                formControlName="name"
+                placeholder="اسم الموظف"
+              />
+              <mat-error *ngIf="name.invalid && (name.touched || name.dirty)"
+                >يجب إدخال اسم الموظف</mat-error
+              >
+            </div>
+            <div class="input-field">
+              <label>العنوان <span class="required-indicator">*</span></label>
+              <input
+                type="text"
+                formControlName="address"
+                placeholder="العنوان"
+              />
+              <mat-error
+                *ngIf="address.invalid && (address.touched || address.dirty)"
+                >يجب إدخال العنوان
+              </mat-error>
+            </div>
+            <div class="input-field">
+              <label
+                >رقم التليفون <span class="required-indicator">*</span></label
+              >
+              <input
+                type="text"
+                formControlName="phone"
+                placeholder="رقم التليفون"
+              />
+              <mat-error
+                *ngIf="phone.errors?.['required'] && (phone.touched || phone.dirty)"
+                >يجب إدخال رقم التليفون</mat-error
+              >
+              <mat-error
+                *ngIf="phone.errors?.['invalidPhone']&& !phone.errors?.['required']"
+              >
+                يجب ان يحتوي رقم التليفون علي 14 رقم
+              </mat-error>
+            </div>
+            <div class="input-field">
+              <label style="margin-bottom: 5px"
+                >النوع <span class="required-indicator">*</span></label
+              >
+              <select formControlName="gender" id="gender">
+                <option disabled selected hidden>اختر</option>
+                <option value="Male">
+                  <span class="span">ذكر</span>
+                </option>
+                <option value="Female">
+                  <span class="span">أنثى</span>
+                </option>
+              </select>
+
+              <mat-error
+                *ngIf="gender.invalid && (gender.touched || gender.dirty)"
+                style="margin-top: 10px"
+                >يجب اختيار النوع</mat-error
+              >
+            </div>
+
+            <div class="input-field">
+              <label>الجنسية <span class="required-indicator">*</span></label>
+              <input
+                type="text"
+                formControlName="nationality"
+                placeholder="الجنسية"
+              />
+              <mat-error
+                *ngIf="
+                  nationality.invalid &&
+                  (nationality.touched || nationality.dirty)
+                "
+                >يجب إدخال الجنسية</mat-error
+              >
+            </div>
+            <div class="input-field">
+              <label
+                >تاريخ الميلاد <span class="required-indicator">*</span></label
+              >
+              <input
+                type="date"
+                formControlName="birthDate"
+                placeholder="تاريخ الميلاد"
+              />
+              <mat-error
+                *ngIf="birthDate.errors?.['required'] &&(birthDate.touched || birthDate.dirty)"
+                >يجب إدخال تاريخ الميلاد</mat-error
+              >
+              <mat-error
+                *ngIf="birthDate.errors?.['invalidAge']&& !birthDate.errors?.['required']"
+              >
+                يجب أن يكون عمر الموظف على الأقل 20 عامًا
+              </mat-error>
+            </div>
+            <div class="input-field">
+              <label
+                >الرقم القومي <span class="required-indicator">*</span></label
+              >
+              <input
+                type="text"
+                formControlName="nationalId"
+                placeholder="الرقم القومي"
+              />
+              <mat-error
+                *ngIf="nationalId.errors?.['required'] && (nationalId.touched || nationalId.dirty)"
+                >يجب إدخال الرقم القومي</mat-error
+              >
+              <mat-error
+                *ngIf="nationalId.value && nationalId.value.length !== 14"
+              >
+                يجب أن يكون الرقم القومي 14 رقمًا
+              </mat-error>
+            </div>
+          </div>
+        </div>
+        <div class="details work">
+          <span class="title">بيانات العمل</span>
+          <div class="workfields">
+            <div class="input-field">
+              <label
+                >تاريخ التعاقد <span class="required-indicator">*</span></label
+              >
+              <input
+                type="date"
+                formControlName="contractdate"
+                placeholder="تاريخ التعاقد"
+              />
+              <mat-error
+                *ngIf="contractdate.errors?.['required']&& (contractdate.touched || contractdate.dirty)"
+                >يجب إدخال تاريخ التعاقد</mat-error
+              >
+              <mat-error
+                *ngIf="contractdate.errors?.['invalidDate']&& !contractdate.errors?.['required']"
+              >
+                يجب أن يكون تاريخ العقد بعد 2008
+              </mat-error>
+              <mat-error
+                *ngIf="contractdate.errors?.['invalidDayDate']&& !contractdate.errors?.['required']"
+              >
+                يجب أن يكون تاريخ العقد قبل تاريخ اليوم
+              </mat-error>
+            </div>
+            <div class="input-field">
+              <label>الراتب <span class="required-indicator">*</span></label>
+              <input
+                type="number"
+                formControlName="netSalary"
+                placeholder="الراتب"
+              />
+              <mat-error
+                *ngIf="
+                  netSalary.invalid && (netSalary.touched || netSalary.dirty)
+                "
+                >يجب إدخال الراتب</mat-error
+              >
+            </div>
+            <div class="input-field">
+              <label>القسم <span class="required-indicator">*</span></label>
+              <select formControlName="department" id="gender">
+                <option disabled selected hidden>اختر</option>
+                <option
+                  *ngFor="let department of departments"
+                  [value]="department.departmentName"
+                >
+                  {{ department.departmentName }}
+                </option>
+              </select>
+              <mat-error
+                *ngIf="
+                  department.invalid && (department.touched || department.dirty)
+                "
+                style="margin-top: 10px"
+                >يجب اختيار القسم</mat-error
+              >
+            </div>
+          </div>
+          <div class="workfields">
+            <div class="input-field">
+              <label
+                >موعد الحضور <span class="required-indicator">*</span></label
+              >
+              <input type="time" formControlName="attendanceTime" />
+              <mat-error
+                *ngIf="
+                  attendanceTime.invalid &&
+                  (attendanceTime.touched || attendanceTime.dirty)
+                "
+                >يجب إدخال موعد الحضور</mat-error
+              >
+            </div>
+            <div class="input-field" style="margin-left: 285px">
+              <label
+                >موعد الانصراف <span class="required-indicator">*</span></label
+              >
+              <input type="time" formControlName="leaveTime" />
+              <mat-error
+                *ngIf="
+                  leaveTime.invalid && (leaveTime.touched || leaveTime.dirty)
+                "
+                >يجب إدخال موعد الانصراف</mat-error
+              >
+            </div>
+          </div>
+        </div>
+        <div dir="ltr" class="buttons">
+          <button
+            class="btn"
+            mat-raised-button
+            type="submit"
+            [disabled]="profileForm.invalid"
+          >
+            <span>حفظ</span>
+            <i class="bx bx-save"></i>
+          </button>
+          <button (click)="closePage()" mat-raised-button class="closebtn">
+            <span>إلغاء</span>
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

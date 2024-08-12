@@ -1,0 +1,54 @@
+<mat-card >
+    <div class="page-title">
+      <h1 class="fs-3 fw-bold"> الأقسام</h1>
+      <hr>
+    </div>
+        <mat-card-header dir="rtl" >
+          <mat-form-field class="customInput" appearance="outline" style="border: none;">
+            <mat-label class="input">بحث</mat-label>
+            <mat-icon class="icon" matPrefix>search</mat-icon>
+            <input #input matInput placeholder="بحث" (input)="applyFilter()">
+          </mat-form-field>
+        </mat-card-header>
+      
+        <mat-card-content dir="rtl">
+          <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8 center-text MainTable" >
+
+            <ng-container matColumnDef="departmentName">
+              <th mat-header-cell *matHeaderCellDef> الأقسام</th>
+              <td mat-cell *matCellDef="let element">{{ element.departmentName }}</td>
+              <!-- <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="element.departmentId !== selectedDepartmentId; else editField">
+                  {{ element.departmentName }}
+                </ng-container>
+                <ng-template #editField>
+                  <input [(ngModel)]="element.departmentName" (blur)="saveDepartment(element)" />
+                </ng-template>
+              </td> -->
+            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>الاجراءات</th>
+              <td mat-cell *matCellDef="let element">  
+                <button (click)="EditDepartment(element.departmentId)" mat-button style="color: #015e87;"><mat-icon>edit</mat-icon></button>
+                <button (click)="DeleteDepartment(element.departmentId)" mat-button style="color: #ff0000;"><mat-icon>delete</mat-icon></button>
+              </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </mat-card-content>
+        <br />
+        <mat-card-footer>
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons 
+          ></mat-paginator>
+    
+          <div class="button-container">
+          <button dir="rtl" class="addBtn" style="background-color: #015e87; color:white" mat-raised-button (click)="addDepartment()">إضافة قسم</button>
+    </div>
+        </mat-card-footer>
+      </mat-card>
+  
+      

@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+  direction: rtl;
+  text-align: right;
+}
+
+.page-title {
+  text-align: right;
+  margin-bottom: 10px;
+  color: #015e87;
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 30px;
+  margin: 0 15px;
+  box-shadow: 0 5px 10px #c5c4c4;
+  height: 510px;
+}
+
+.container header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #015e87;
+}
+
+.container header::before {
+  content: "";
+  position: absolute;
+  width: 12%;
+  height: 3px;
+  border-radius: 8px;
+  background-color: #c5c4c4;
+  top: 65px;
+}
+
+.container form {
+  position: relative;
+  margin-top: 16px;
+  min-height: 300px;
+  background-color: #fff;
+
+}
+
+.container form .form {
+  position: absolute;
+  background-color: #fff;
+}
+
+.container form .title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #f5835f;
+}
+
+.container form .workfields {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container form .input-field {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0;
+  width: calc(100% /3 - 15px);
+}
+
+/* .container form .input-fieldGeneral {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0;
+  width: calc(100% /3 - 15px);
+} */
+
+.input-field label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #015e87;
+  margin: 5px;
+}
+
+.input-field label, .input-fieldGeneral label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #015e87;
+  margin: 5px;
+}
+
+.input-field input,
+#dropdowninput,
+#dropdowninput2,
+#dropdowninput_days1,
+#dropdowninput_days2 {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #c5c4c4;
+  padding: 15px;
+  height: 42x;
+  margin: 8px 0;
+}
+
+#dropdowninput,
+#dropdowninput2,
+#dropdowninput_days1,
+#dropdowninput_days2 {
+  margin: -5px 0;
+
+}
+
+.input-field input:is(:focus, :valid),
+#dropdowninput:is(:focus, :valid) {
+  box-shadow: 0 2px 2px #c5c4c4;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  border: none;
+  outline: none;
+  color: #eee;
+  border-radius: 5px;
+  background-color: #015e87;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 15px;
+  margin-top: 50px;
+  margin-left: -15px;
+}
+
+button:hover {
+  background-color: #0572a1;
+}
+
+button i {
+  margin: 0 6px;
+}
+
+mat-button-toggle-group {
+  margin-left: 12px;
+  margin-top: 20px;
+  /* width: 510px; */
+}
+
+mat-button-toggle {
+  width: 110px;
+}
+
+.btnText {
+  color: white;
+}
+
+.title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #f5835f;
+  border: 1px solid #f5835f;
+  border-radius: 4px;
+  padding: 4px;
+  width: fit-content;
+}

@@ -1,0 +1,174 @@
+mat-card {
+  margin: 1%;
+}
+.page-title {
+  text-align: right;
+  margin-bottom: 3px;
+  color: #015e87;
+  font-weight: bold;
+  padding: 15px;
+}
+
+button {
+  margin: 2px;
+}
+
+.addBtn {
+  background-color: #015e87;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  /* margin-right: 1300px;
+  margin-bottom: 15px; */
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: white;
+  background-color: #015e87;
+}
+
+::ng-deep .mat-sort-header-arrow[style] {
+  .mat-sort-header-indicator {
+    opacity: 1;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+th {
+  background-color: #f0f0f0 !important;
+  color: black;
+  font-weight: bold;
+
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+[dir="rtl"] .mdc-data-table__cell,
+.mdc-data-table__cell[dir="rtl"] {
+  text-align: center;
+}
+
+[dir="rtl"] .mdc-data-table__header-cell,
+.mdc-data-table__header-cell[dir="rtl"] {
+  text-align: center;
+}
+
+/* .mat-mdc-header-row {
+  text-align: center;
+} */
+
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
+}
+
+.icon {
+  color: #015e87;
+  background-color: transparent;
+}
+
+td.mat-cell,
+th.mat-header-cell {
+  text-align: center;
+  justify-content: center;
+}
+
+/* td{
+  text-align: center !important;
+  vertical-align: middle !important;
+} */
+
+.mat-column-id {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-name {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-PhoneNo {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-Address {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-NationalId {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-Nationality {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-Gender {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-BirthDate {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-ContractDate {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-Salary {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-Department {
+  border-left: 1px solid #d6d6d6;
+  /* padding-left: 3px; */
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.mat-column-settings {
+  border-left: 1px solid #d6d6d6;
+  text-align: center;
+
+}
+.mat-column-action {
+  border-left: 1px solid #d6d6d6;
+  padding-left: 1px;
+  text-align: center;
+
+}
+
+.button-container {
+  display: flex;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}

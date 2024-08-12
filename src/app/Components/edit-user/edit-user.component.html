@@ -1,0 +1,55 @@
+<div class="body">
+    <div class="container">
+      <div class="page-title">
+        <h1 class="fs-3 fw-bold">تعديل المستخدم</h1>
+        <hr>
+      </div>
+      <form [formGroup]="editUser" (ngSubmit)="save()">
+        <div class="form first">
+          <div class="details personal">
+            <div class="fields">
+              <div class="input-field">
+                <label>الاسم بالكامل</label>
+                <input type="text" formControlName="name" placeholder="الاسم بالكامل">
+              </div>
+
+              <div class="input-field">
+                <label>اسم المستخدم</label>
+                <input type="text" formControlName="user_Name" placeholder="اسم المستخدم">
+              </div>
+              <div class="input-field">
+                <label style="margin-bottom: 15px;">الصلاحيات</label>
+                <select formControlName="role_Id" id="permissions" style="padding: 12px !important;">
+                  <option disabled selected hidden>اختر</option>
+                  <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+                </select>
+              </div>
+
+  
+              <div class="input-field">
+                <label>البريد الالكتروني</label>
+                <input type="email" formControlName="email" placeholder="abc12@gmail.com">
+              </div>
+  
+              <div class="input-field">
+                <label>الباسورد</label>
+                <input type="password" formControlName="password" placeholder="الباسورد">
+              </div>
+  
+            </div>
+          </div>
+  
+          <div dir="ltr" class="buttons">
+            <button class="btn" mat-raised-button type="submit">
+                <span>حفظ</span>
+                <i class=" bx bx-save"></i>
+            </button>
+            <button (click)="closePage()" mat-raised-button class="closebtn">
+                <span>إلغاء</span>
+                <i class=" bx bx-x"></i>
+            </button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>

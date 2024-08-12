@@ -1,0 +1,152 @@
+<mat-card>
+  <div class="page-title">
+    <h1 class="fs-3 fw-bold">تقرير رواتب الموظفين</h1>
+    <hr />
+  </div>
+
+  <mat-card-header dir="rtl">
+    <mat-form-field
+      class="customInput"
+      appearance="outline"
+      style="border: none"
+    >
+      <mat-label class="input">بحث</mat-label>
+      <mat-icon class="icon" matPrefix>search</mat-icon>
+      <input matInput (keyup)="Filterchange($event)" />
+    </mat-form-field>
+
+    <button class="printAll" (click)="printAll()">
+      <mat-icon class="printIcon">print</mat-icon>
+    </button>
+
+  </mat-card-header>
+
+  <button class="printAll" (click)="exportToExcel()">
+    <img src="/assets/excel.png" style="position: relative; left:70px; bottom:60px; width:30px" class="excelIcon"/>
+  </button>
+
+  <mat-card-header dir="rtl">
+    <mat-form-field appearance="outline" style="margin-right: 16px">
+      <mat-label>الشهر</mat-label>
+      <mat-select id="month" [(ngModel)]="selectedMonth" name="month">
+        <mat-option *ngFor="let month of months" [value]="month">{{
+          month
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="margin-right: 16px">
+      <mat-label>السنة</mat-label>
+      <mat-select id="year" [(ngModel)]="selectedYear" name="year">
+        <mat-option *ngFor="let year of years" [value]="year">{{
+          year
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      dir="rtl"
+      class="searchBtn"
+      style="background-color: #015e87; color: white"
+      mat-raised-button
+      (click)="searchEmployee()"
+    >
+      <mat-icon>search</mat-icon> بحث
+    </button>
+  </mat-card-header>
+
+  <mat-card-content dir="rtl">
+    <table
+      matSort
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 center-text MainTable"
+    >
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>اسم الموظف</th>
+        <td mat-cell *matCellDef="let element">{{ element.empName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef>القسم</th>
+        <td mat-cell *matCellDef="let element">{{ element.deptName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="BasicSalary">
+        <th mat-header-cell *matHeaderCellDef>الراتب الأساسي</th>
+        <td mat-cell *matCellDef="let element">{{ element.netSalary }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="DaysOfAttendance">
+        <th mat-header-cell *matHeaderCellDef>عدد أيام الحضور</th>
+        <td class="td" mat-cell *matCellDef="let element">
+          {{ element.attendanceDays }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="DaysOfAbsence">
+        <th mat-header-cell *matHeaderCellDef>عدد أيام الغياب</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.absenceDaysToDate }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="AdditionalHours">
+        <th mat-header-cell *matHeaderCellDef>الاضافي بالساعات</th>
+        <td mat-cell *matCellDef="let element">{{ element.exrtaHours }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="DiscountHours">
+        <th mat-header-cell *matHeaderCellDef>الخصم بالساعات</th>
+        <td mat-cell *matCellDef="let element">
+          {{ convertToPositiveNumber(element.discountHours) }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="AdditionalTotal">
+        <th mat-header-cell *matHeaderCellDef>اجمالي الاضافي</th>
+        <!-- <td mat-cell *matCellDef="let element">{{ element.extraSalary | number: '1.0-0' }}</td> -->
+        <td mat-cell *matCellDef="let element">{{ element.extraSalary | number:'1.3-3' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDiscount">
+        <th mat-header-cell *matHeaderCellDef>اجمالي الخصم</th>
+        <td mat-cell *matCellDef="let element">
+          {{ convertToPositiveNumber(element.discountSalary) | number:'1.3-3' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="NetSalary">
+        <th mat-header-cell *matHeaderCellDef>الصافي</th>
+        <td mat-cell *matCellDef="let element">
+          {{ convertToPositiveNumber(element.totalSalary) | number:'1.3-3' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>الاجراءات</th>
+        <td mat-cell *matCellDef="let element">
+          <!-- <button (click)="print(element)" class="printBtn"><mat-icon class="printIcn">print</mat-icon> </button> -->
+
+          <button
+            (click)="openDetailsPopup(element.id)"
+            style="color: #015e87"
+            class="editIcon"
+          >
+            <mat-icon class="keyIcon">key</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <br />
+  <mat-card-footer>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card-footer>
+</mat-card>

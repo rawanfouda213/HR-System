@@ -1,0 +1,60 @@
+<div id="page-content-wrapper">
+  <!-- <div class="page-title p-3 bg-white shadow-sm d-flex">
+    <h1 class="fs-3 fw-meduim">Dashboard</h1>
+    <hr />
+  </div> -->
+  <div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+      <div class="col-md-4">
+        <div
+          class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+        >
+          <div>
+            <h3 class="fs-2">{{ dashboardData?.numberOfEmployees }}</h3>
+            <p class="fs-5">الموظفين</p>
+          </div>
+          <i class="bx bx-group rounded-full p-3"></i>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+        >
+          <div>
+            <h3 class="fs-2">{{ dashboardData?.numberOfDepartments }}</h3>
+            <p class="fs-5">الاقسام</p>
+          </div>
+          <i class="bx bx-detail rounded-full p-3"></i>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+        >
+          <div>
+            <h3 class="fs-2">{{ dashboardData?.averageSalary | number: '1.0-0' }}</h3>
+            <p class="fs-5">متوسط الدخل</p>
+          </div>
+          <i class="bx bx-dollar rounded-full p-3"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chart p-3 bg-white shadow-sm d-flex">
+    <div class="chart-container">
+      <canvas id="MaleChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="FemaleChart"></canvas>
+    </div>
+  </div>
+
+  <div class="attendance bg-white shadow-sm d-flex">
+    <div style="padding-left: 200px" class="attendance-container">
+      <canvas id="AttendenceChart"></canvas>
+    </div>
+    <div class="attendance-container">
+      <canvas id="LateAttendenceChart"></canvas>
+    </div>
+  </div>
+</div>

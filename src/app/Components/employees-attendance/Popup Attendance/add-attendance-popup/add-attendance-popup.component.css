@@ -1,0 +1,96 @@
+.closeBtn{
+    background-color: #015e87;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.mat-dialog-title {
+    text-align: center;
+    color: #015e87; /* Adjust color as needed */
+    font-weight: bold;
+  }
+
+  .mat-dialog-content {
+    direction: rtl;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* margin-top: 20px;  */
+  }
+
+  .mat-dialog-actions button {
+    background-color: #015e87; /* Adjust background color as needed */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .mat-dialog-actions button:hover {
+    background-color: #01436a; /* Adjust hover background color as needed */
+  }
+
+  .page-title {
+    text-align: right;
+    margin-bottom: 10px; 
+    color: #015e87;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+
+  .container form .workfields{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .container form .input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+    width: calc(100% /3 - 15px);
+  }
+  .input-field label{
+    font-size: 15px;
+    font-weight: 500;
+    color: #015e87;
+    margin: 5px;
+  }
+
+  .bgSave {
+    background-color: #015e87;
+    color: #fff;
+    border-style: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    /* font-weight: bold; */
+ }
+
+ .bgSave:hover {
+  background-color: #00364d;
+  box-shadow: 0px 0px 5px 2px #00415d7f;
+}
+
+.button-container {
+  display: flex;
+  /* margin-left: 20px; */
+  /* margin-bottom: 10px; */
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.btnClose{
+  margin-left: 10px;
+  background-color:  rgb(249, 48, 48);
+}
+
+.btnClose:hover{
+  background-color:  rgb(206, 40, 40);
+  box-shadow: 0px 0px 5px 2px rgb(241, 223, 223) !important;
+}

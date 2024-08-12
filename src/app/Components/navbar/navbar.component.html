@@ -1,0 +1,52 @@
+<mat-toolbar dir="rtl"  *ngIf="showNavbar" class="mat-elevation-z8 navbar">
+    <button  (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button routerLink="Dashboard" [ngClass]="{ 'active': activeRoute === '/Dashboard' }" (click)="toggleActive('/Dashboard')" class="navButtons"><mat-icon style=" font-size: 15px; padding-top: 10px; font-weight: bold;">home</mat-icon> <span> الرئيسية </span></button>
+    <!-- <button (click)="logout(); toggleDrawer()" class="navButtons"><mat-icon style=" font-size: 15px; padding-top: 11px; font-weight: bold; margin-left: 5px;">logout</mat-icon> <span>تسجيل الخروج</span></button> -->
+    <button (click)="logout()" class="navButtons"><mat-icon style=" font-size: 15px; padding-top: 11px; font-weight: bold; margin-left: 5px;">logout</mat-icon> <span>تسجيل الخروج</span></button>
+
+    <span class="example-spacer"></span>
+    <span style="margin-right: 5px;">HR System</span>
+
+    
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+    <mat-drawer dir="rtl" class="sideBar" #drawer opened="false" mode="side" position="end" style="height: 150vh; overflow-y: auto;" >
+
+        <div *ngIf="showNavbar" class="col-md-9 d-flex align-items-center">
+            <img src="/assets/logoSidebar.png" alt="Logo" style="width: 150px;" class="img-fluid2 mt-3">
+            <img src="/assets/logo.png" alt="Logo" class="img-fluid">
+        </div>
+
+
+
+    <mat-nav-list *ngIf="showNavbar">
+
+
+
+    <mat-list-item routerLink="Dashboard" [class.active] = "activeRoute === '/Dashboard'" (click) = "toggleActive('/Dashboard'); toggleDrawer()">
+        <button class="fw-bold" routerLink="Dashboard" [ngClass]="{ 'active': activeRoute === '/Dashboard' }" (click)="toggleActive('/Dashboard')" class="sideButtons"><mat-icon class="sideIcons">home</mat-icon> الرئيسية</button>
+    </mat-list-item>
+  
+      <div *ngIf="roleResponse && roleResponse.rolePermissionsDTOs && roleResponse.rolePermissionsDTOs?.length! >= 0" >
+        <div *ngFor="let permission of roleResponse.rolePermissionsDTOs">
+          <mat-list-item [routerLink]="permission.routerLink" [ngClass]="{ 'active': isActive(permission) }" (click)="toggleActive(permission); toggleDrawer()" 
+          [ngStyle]="{ 'background-color': isActive(permission) ? '#015e87' : 'transparent', 'color': isActive(permission) ? 'white' : 'inherit'}">
+              <button class="sideButtons" (click)="toggleActiveAndDrawer(permission)" [ngStyle]="{ 'background-color': isActive(permission) ? '#015e87' : 'transparent', 'color': isActive(permission) ? 'white' : 'inherit'}">
+                  <mat-icon class="sideIcons">{{permission.icon}}</mat-icon>{{permission.label}}
+              </button>
+          </mat-list-item>
+      </div>
+      </div>
+  </mat-nav-list>
+      
+    </mat-drawer>
+
+    <mat-drawer-content [style.marginRight.px]="drawer.opened ? 270 : 0">
+        <div style="text-align: center; min-height: 670px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
