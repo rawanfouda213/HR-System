@@ -13,7 +13,7 @@ This project is an HR Management System has been designed to make HR tasks a bre
 
 ✔ Payroll Administration
 
-✔ From keeping an eye on employee attendance to computing bonus hours.
+✔ keeping an eye on employee attendance to computing bonus hours.
 
 ## Features
 ● **LogIn**: Hr Creates Accounts For Employees and Specify Roles and Permissions For each User.
